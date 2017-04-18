@@ -35,7 +35,8 @@ repositories {
 dependencies {
     def tomcatVersion = '8.0.42'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:20.0'
@@ -43,6 +44,8 @@ dependencies {
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+
+    compile "javax:javaee-api:7.0"
 }
 
 // Define the main class for the application
