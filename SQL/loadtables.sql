@@ -1,26 +1,4 @@
---
--- 	Script to populate the tables for the symphony database.
--- 	This script is used to insert data into the symphony database
--- 	tables under SQL.
---
--- 	Cloudscape commands:
--- 		>cloudscape -start
--- 		>cloudscape -isql < createtables.sql
--- 		>cloudscape -stop
---
--- 	$Id:	loadtables.sql, v 1.0.0.0 2001/11/12 R. Dyer
-
-use mysql;
-
-DELETE FROM Movements;
-DELETE FROM Movement;
-DELETE FROM LastPerformed;
-DELETE FROM ConcertSoloist;
-DELETE FROM Soloist;
-DELETE FROM Composition;
-DELETE FROM Concert;
-DELETE FROM Conductor;
-DELETE FROM ConcertSeason;
+use symphony;
 
 -- INSERT INTO ConcertSeason VALUES ('01-JUN-2002');
 -- INSERT INTO ConcertSeason VALUES ('01-JUN-2001');

@@ -1,11 +1,4 @@
---
---	Script to create the tables for the symphony database.
---	This script is used to setup the symphony database tables under SQL.
---
---
---	$Id:	createtables.sql, v 1.0.0.0 2001/11/12 R. Dyer
---
---	Drop tables
+use symphony;
 
 DROP TABLE IF EXISTS  Movements;
 DROP TABLE IF EXISTS  Movement;
