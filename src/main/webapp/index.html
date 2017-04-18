@@ -26,11 +26,38 @@
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
+    <div class="container">
         <h1>Symphony Composers</h1>
-      </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <table id="composerTable" class="table">
+                <caption id="composerName">Composer Name</caption>
+                <thead>
+                <tr>
+                    <th>Composition</th>
+                    <th>Movements</th>
+                </tr>
+                </thead>
+                <tbody id="composerTableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6 center-block">
+                <button id="btnPrev" class="btn btn-default center-block">Previous Composer</button>
+            </div>
+            <div class="col-md-6 center-block">
+                <button id="btnNext" class="btn btn-default center-block">Next Composer</button>
+            </div>
+        </div>
     </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
