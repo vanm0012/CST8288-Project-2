@@ -3,7 +3,7 @@ package io.github.vanm0012.symphonymanager.database;
 import java.sql.*;
 
 /**
- * Created by Sheldon on 2017-04-18.
+ * This class creates the connection to the database
  */
 public class DatabaseConnection {
     private Connection connection = null;
@@ -13,6 +13,9 @@ public class DatabaseConnection {
     private String user = "root";
     private String password = "100scout";
 
+    /**
+     * Default constructor creates connection from set strings
+     */
     public DatabaseConnection(){
         try{
             connection = DriverManager.getConnection(url,user,password);
@@ -24,6 +27,10 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * Returns the established connection
+     * @return Connection to DB
+     */
     public Connection getConnection(){
         return connection;
     }
