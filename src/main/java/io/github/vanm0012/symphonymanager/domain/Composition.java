@@ -103,4 +103,8 @@ public class Composition
     {
         return id;
     }
+
+    public void addMovement(String name,int id){
+        movements.add(new Movement(name,id));
+    }
 }
