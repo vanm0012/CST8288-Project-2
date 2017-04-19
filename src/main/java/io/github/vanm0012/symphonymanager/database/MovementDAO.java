@@ -12,15 +12,13 @@ public class MovementDAO
     private ResultSet resultSet = null;
     private PreparedStatement preparedStatement = null;
     private Connection connection = null;
-    private DatabaseConnection dbc;
     private ArrayList<Composition> compositions = null;
     private CompositionDAO compdao = null;
 
     public MovementDAO(){
         compdao = new CompositionDAO();
         compositions = compdao.getCompositions();
-        dbc = new DatabaseConnection();
-        connection = dbc.getConnection();
+        connection = compdao.getConnection();
 
 
         try {
