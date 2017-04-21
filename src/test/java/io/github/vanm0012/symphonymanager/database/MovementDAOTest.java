@@ -19,8 +19,9 @@ public class MovementDAOTest {
     }
 
     @Test
-    public void MovementDAO(){
+    public void MovmentDAO(){
         new CompositionDAO();
         new MovementDAO();
     }
+
 }
