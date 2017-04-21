@@ -49,15 +49,16 @@ public class SymphonySV extends HttpServlet
 
         try
         {
+            Class.forName("org.mariadb.jdbc.Driver");
            connection = DriverManager.getConnection(
-              "jdbc:mysql://localhost:3306/symphony"     ,
+              "jdbc:mysql://localhost:3306/symphony",
                     "symphony",
                     "symphonypass"
             );
         }
-        catch (SQLException e)
+        catch (SQLException | ClassNotFoundException e)
         {
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         return connection;
@@ -92,7 +93,13 @@ public class SymphonySV extends HttpServlet
         }
         catch (SQLException e)
         {
-            throw new ServletException("Could not connect to the database");
+            throw new ServletException("Could not connect to the database", e);
+        }
+        finally
+        {
+            try { resultSet.close(); } catch (Exception e) { /* ignored */ }
+            try { preparedStatement.close(); } catch (Exception e) { /* ignored */ }
+            try { connection.close(); } catch (Exception e) { /* ignored */ }
         }
 
         // create response
@@ -131,7 +138,13 @@ public class SymphonySV extends HttpServlet
         }
         catch (SQLException e)
         {
-            throw new ServletException("Could not connect to the database");
+            throw new ServletException("Could not connect to the database", e);
+        }
+        finally
+        {
+            try { resultSet.close(); } catch (Exception e) { /* ignored */ }
+            try { preparedStatement.close(); } catch (Exception e) { /* ignored */ }
+            try { connection.close(); } catch (Exception e) { /* ignored */ }
         }
 
         // create response
@@ -166,7 +179,13 @@ public class SymphonySV extends HttpServlet
         }
         catch (SQLException e)
         {
-            throw new ServletException("Could not connect to the database");
+            throw new ServletException("Could not connect to the database", e);
+        }
+        finally
+        {
+            try { resultSet.close(); } catch (Exception e) { /* ignored */ }
+            try { preparedStatement.close(); } catch (Exception e) { /* ignored */ }
+            try { connection.close(); } catch (Exception e) { /* ignored */ }
         }
 
         return movements;
